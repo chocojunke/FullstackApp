@@ -15,7 +15,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist:ui": "rd /s /q dist && cd ../../part2/phonebook && npm run build && copy dist ../../part3/phonebook",
+    "dist:ui": "cd ../frontend && npm run build && copy dist ../backend",
     "deploy:full": "npm run dist:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "",
