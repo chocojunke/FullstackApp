@@ -75,6 +75,8 @@ app.post('/api/persons', (request, response) => {
     }
     phonebook = phonebook.concat(person);
 
+    response.send(person);
+
 });
 
 app.delete('/api/persons/:id', (request, response) => {
@@ -89,6 +91,13 @@ app.get('/info', (request, response) => {
 })
 
 
+
+
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: 'unknown endpoint' })
+}
+
+app.use(unknownEndpoint)
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

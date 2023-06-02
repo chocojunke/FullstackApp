@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for blue-firefly-775 on 2023-06-02T14:57:38+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "blue-firefly-775"
+primary_region = "mad"
+
+[env]
+  PORT = "8080" # add this
+
+[experimental]
+  auto_rollback = true
+  
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
